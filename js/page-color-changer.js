@@ -24,7 +24,7 @@ function changeRgb (color,value) {
         return rgb;
     }
 
-function writeCSS () {
+function writeCSS (updatedRgb) {
     let newColor = "rgb(";
     let i = 0;
     while ( i < newRgb.length - 1) {
@@ -35,7 +35,13 @@ function writeCSS () {
     return newColor;
 }
 newColor = `rgb(255,0,0), rgb(0,255,0), rgb(0,0,255),`
-console.log(newColor);
+
+
+newArray = (")");
+if (newArray += newColor) {
+    newColor.concat(newArray);
+    console.log(newColor.slice(0,-1));
+}
 
 // Build one or more functions that change the background-color property value of the page body (or HTML element), based on the values of the three range sliders (hint - we changed the background-color of the page in a prior lesson).
 for (let i=0; i < sliders.length; i++) {
@@ -43,7 +49,7 @@ for (let i=0; i < sliders.length; i++) {
         let whichSlider = this.getAttribute('id');
         let sliderValue = this.value;
         newRgb = changeRgb(whichSlider, sliderValue);
-        newCss = writeCSS(newRgb);
+        newCSS = writeCSS(newRgb);
         pageBg.style.backgroundColor = newCSS;
     }
 }
